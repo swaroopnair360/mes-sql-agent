@@ -1,0 +1,21 @@
+WIP_ORDER joins WIP_OPERATION using:
+- WipOrderNo
+- WipOrderType
+
+WIP_OPERATION joins PROGRESS_STATUS using:
+- ProgressStatus
+
+While joining wip_operation, always use InsideProcessFlag = 1 condition
+
+Use WIP_OPERATION.ProgressStatus for current status, not WIP_ORDER.
+
+While joining RESOURCE_ table, always use both ResourceName & ResourceType
+- ResourceType = 6 is machine
+
+Text_Translation helps in getting translation and description across all tables. By default used LanguageID as 1033 (English)
+
+Order description needs to be found using textid from wip_order
+
+All tables have CreatedBy, CreatedOn, LastUpdateOn, LastUpdatedBy columns
+
+Wip order table stores both SAP Po and MES po. SAP PO is wipordertype 23 and MES PO is wipordertype 1

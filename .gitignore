@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Backups
+Code Backups/
+
+# Optional files
+Commands.txt
+
+# OS
+.DS_Store
+Thumbs.db

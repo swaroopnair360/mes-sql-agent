@@ -1,0 +1,48 @@
+Table: WIP_ORDER
+Description: Has all the order information along with product, parent order (SAP order) and details
+Columns: WipOrderNo, WipOrderType, ProductID, UomCode, ParentWIPOrderNo, ParentWIPOrderType, TextID
+
+Table: WIP_OPERATION
+Description: This table contains the WIP Operations linked to the various WIP Orders in the system and its progressStatus column is used to store order progress status
+Columns: WipOrderNo, WipOrderType, ProgressStatus, TextID, InsideProcessFlag
+
+Table: WIP_REQ_RESOURCE
+Description: This table contains the list of the Resource classes, Resource names, Roles, and Skills that are authorized to work on an Operation.
+Columns: WipOrderNo, WipOrderType, OprSequenceNo, ResourceName, ResourceType
+
+Table: RESOURCE_
+Description: This table stores the Resources used in the system.
+Columns: Name, ResourceName, ResourceType
+
+Table: PROGRESS_STATUS
+Description: This table contains various prime and custom progress statuses used in different areas: WIP Orders, Work Instructions and Change Management.
+Columns: ProgressStatus, Name
+
+Table: EMPLOYEE
+Description: Stores all information related to an employee. Employee is a specialization of the RESOURCE table.
+Columns:
+- ID: Unique identifier of the employee (primary key)
+- Name: Full name of the employee
+- GivenName: First name of the employee
+- MiddleName: Middle name of the employee
+- FamilyName: Last name of the employee
+- AddressID: Reference to ADDRESS table (employee address)
+- ContactID: Reference to CONTACT table (employee contact details)
+- EmployeeNo: Unique employee number
+- LoginName: Login username for the employee
+- Password: Encrypted password of the employee
+
+Table: TEXT_TRANSLATION
+Description: Stores translated text values for different languages. Supports multiple description lengths (micro, short, medium, extended).
+Columns:
+- TextID: Reference to TEXT table (identifies the text entity)
+- LanguageID: Reference to LANGUAGE table (language of the translation)
+- Micro: Very short description (1 character)
+- Short: Short description (up to 80 characters)
+- Medium: Medium description (up to 255 characters)
+- Extended: Extended description (up to 2000 characters)
+
+Table: PRODUCT
+Description: This table stores all the valid products for a Company.
+Columns: ID, ProductNo, TextID
+
