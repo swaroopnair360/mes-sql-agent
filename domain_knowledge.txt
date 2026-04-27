@@ -12,6 +12,8 @@ Use WIP_OPERATION.ProgressStatus for current status, not WIP_ORDER.
 While joining RESOURCE_ table, always use both ResourceName & ResourceType
 - ResourceType = 6 is machine
 
+ResourceName is never the name of machine. Resource_.Name is the machine name always
+
 Text_Translation helps in getting translation and description across all tables. By default used LanguageID as 1033 (English)
 
 Order description needs to be found using textid from wip_order
@@ -23,3 +25,4 @@ Wip order table stores both SAP Po and MES po. SAP PO is wipordertype 23 and MES
 Meaning of labortype: 1 - Indirect, 2 - Job Direct, 3 - Job Downtime, 4 - Job Setup, 5 - Job Teardown, 6 - Planned Maintenance, 7 - Span (Shift), 8 - State (Event), 9 - Order, 10 - Product, 11 - Defect, 12 - Custom
 
 Meaning of laborStatus: 1 - Open, 2 - Closed, 3 - Signed Off, 4 - Approved, 5 - Posted, 6 - Posted Signed Off, 7 - Posted
+
