@@ -19,3 +19,7 @@ Order description needs to be found using textid from wip_order
 All tables have CreatedBy, CreatedOn, LastUpdateOn, LastUpdatedBy columns
 
 Wip order table stores both SAP Po and MES po. SAP PO is wipordertype 23 and MES PO is wipordertype 1
+
+Meaning of labortype: 1 - Indirect, 2 - Job Direct, 3 - Job Downtime, 4 - Job Setup, 5 - Job Teardown, 6 - Planned Maintenance, 7 - Span (Shift), 8 - State (Event), 9 - Order, 10 - Product, 11 - Defect, 12 - Custom
+
+Meaning of laborStatus: 1 - Open, 2 - Closed, 3 - Signed Off, 4 - Approved, 5 - Posted, 6 - Posted Signed Off, 7 - Posted

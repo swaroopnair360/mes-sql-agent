@@ -46,3 +46,31 @@ Table: PRODUCT
 Description: This table stores all the valid products for a Company.
 Columns: ID, ProductNo, TextID
 
+Table: RESOURCE_LABOR
+Description: Stores execution and labor tracking data for resources, including start/end times, employees involved, production context, quantities, and status. Used for tracking machine and operator activity during production.
+
+Columns:
+- ID: Unique identifier of the resource labor record (primary key)
+- Revision: Version number (future use)
+- ResourceName: Name of the resource (machine or employee)
+- ResourceType: Type of resource (machine, employee, etc.)
+- StartedEmployeeID: Employee who started the labor record (reference to EMPLOYEE)
+- EndEmployeeID: Employee who ended the labor record (reference to EMPLOYEE)
+- LaborType: Type of labor activity (reference to LABOR_TYPE)
+- ReasonCode: Reason for hold or interruption (reference to REASON_CODE)
+- WorkCenter: Name of the work center (reference to WORK_CENTER)
+- TotalGoodQuantity: Total good quantity produced
+- TotalScrapQuantity: Total scrap quantity
+- TotalReworkQuantity: Total rework quantity
+- TotalHeldQuantity: Total held quantity
+- TotalFailQuantity: Total failed quantity
+- StartTime: Start time of the activity
+- EndTime: End time of the activity
+- LoadTime: Load time (future use)
+- UnloadTime: Unload time (future use)
+- Status: Status of the labor record (e.g., Open, Closed)
+- WipOrderNo: WIP order number (reference to WIP_OPERATION)
+- WipOrderType: WIP order type (reference to WIP_OPERATION)
+- OprSequenceNo: Operation sequence number (reference to WIP_OPERATION)
+
+
