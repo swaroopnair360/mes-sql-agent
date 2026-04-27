@@ -44,7 +44,7 @@ if st.button("⚡ Generate SQL", use_container_width=True):
         with st.spinner("Thinking..."):
             try:
                 res = requests.post(
-                    "http://127.0.0.1:8000/generate-sql",
+                    "https://mes-sql-agent.onrender.com/generate-sql",
                     json={"question": question}
                 )
 
